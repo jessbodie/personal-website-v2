@@ -1,9 +1,3 @@
-///////// TODO
-// SPECIFY WHICH ENVIRON AND THEN SHOW CSS. MIDDLEWARE IS #45
-// ADD SASS COMPILE
-// CAPTIONS TO A FILE const fs = require('fs');
-// SET UP WITH GIT
-// SET UP WITH HEROKU
 const express = require('express');
 const hbs = require('hbs');
 

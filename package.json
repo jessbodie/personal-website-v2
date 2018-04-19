@@ -3,19 +3,36 @@
   "version": "1.0.0",
   "description": "Jess Bodie Richards - Personal Website v2.0",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jessbodie/personal-website-v2.git"
+  },
+  "scripts": {
+    "compile:sass": "node-sass public/sass/main.scss public/css/style.css",
+    "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' public/css/style.css -o public/css/style.prefix.css",
+    "compress:css": "node-sass public/css/style.prefix.css public/css/style.css --output-style compressed",
+    "build:css": "npm-run-all compile:sass prefix:css compress:css",
+    "watch": "nodemon -e js,hbs",
+    "watch:sass": "nodemon -e scss -x \"npm run compile:sass\"",
+    "start:dev": "npm-run-all -p watch:sass watch",
+    "start:node": "node index.js",
+    "start": "npm-run-all -p build:css start:node"
   },
   "author": "Jess Bodie Richards",
   "license": "ISC",
   "homepage": "https://github.com/jessbodie/personal-website-v2",
   "dependencies": {
+    "aos": "^2.2.0",
     "express": "^4.16.3",
     "hbs": "^4.0.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "^8.3.0",
+    "concat": "^1.0.3",
+    "eslint": "^4.19.1",
+    "node-sass": "^4.8.3",
+    "nodemon": "^1.17.3",
+    "npm-run-all": "^4.1.2",
+    "postcss-cli": "^5.0.0"
   }
 }
