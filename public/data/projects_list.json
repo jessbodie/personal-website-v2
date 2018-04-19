@@ -29,11 +29,11 @@
     {
         "id": 3,
         "title": "Developer (2017)",
-        "link": "../captions.html",
+        "link": "/captions",
         "label": "JS, SASS",
         "screenshot": "img/projects/proj_captions.png",
         "alt": "Screenshot of Captions Generator",
-        "description": "<p>Developed <b><a href='../captions.html' target='_blank'>Caption Generator</a></b> feature in JavaScript to show random captions and incorporate new captions input by user.</p>"
+        "description": "<p>Developed <b><a href='/captions' target='_blank'>Caption Generator</a></b> feature in JavaScript to show random captions and incorporate new captions input by user.</p>"
         },
     {
         "id": 4,
