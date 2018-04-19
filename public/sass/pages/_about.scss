@@ -1,0 +1,47 @@
+  .section-hero-about {
+    @include section-block;
+    height: 30rem;
+    max-height: 75vh;
+    background-color: $color-primary;
+    @include dropshadow;
+
+
+    background-image: linear-gradient(
+         to right bottom,
+         rgba($color-primary, 0.8),
+         rgba($color-primary-dark, .95)),
+         url('img/verrazano_day_cropped.jpg');
+
+    background-size: cover;
+    background-position: bottom 20% left;
+    background-repeat: no-repeat;
+    max-width: 100%;
+    z-index: map-get($zindex, text-over);
+
+    @include respond(tab-port) {
+      height: 34rem;
+    }
+  }
+
+.section-obligatory {
+  @include section-block;
+  background-color: $color-white-true;
+  color: $color-black;
+  padding-top: 2rem;
+  padding-bottom: $left-margin;
+  @include dropshadow;
+}
+
+.section-DnD {
+  border: 1px solid black;
+  @include section-block;
+  background-color: rgba($color-primary, .2);
+  color: $color-black;
+  padding-top: 2rem;
+  padding-bottom: $left-margin;
+  @include dropshadow;
+
+  @media only screen and (max-width: 56.25em) and (hover:none) {
+    display: none;
+  }
+}

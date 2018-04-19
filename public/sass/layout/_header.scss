@@ -1,0 +1,192 @@
+.header {
+  position: fixed;
+  background-color: $color-white;
+  width: 100vw;
+  height: $nav-top-margin;
+  opacity: .99;
+  z-index: map-get($zindex, header);
+
+
+
+  &__logo-nav {
+
+    position: sticky;
+    width: 100%;
+    display: inline-block;
+    // @include dropshadow;
+    box-shadow: 0 .5rem .5rem -.5rem rgba($color-primary, .6);
+    height: $nav-top-margin;
+  }
+
+
+  &__logo {
+    content:'';
+    line-height: 6rem;
+    position: absolute;
+    top: 0;
+    left: $left-margin;
+    // Remove left/right margins for mobile
+    @include respond(mobile) {
+      left: 0;
+    }
+
+
+
+    height: 6rem;
+    width: 6rem;
+    background-color: $color-primary-dark;
+    padding:0;
+    margin: 0;
+    @include dropshadow;
+    display: inline-block;
+    transition: all 300ms;
+
+    opacity: 0;
+
+    @include animation__moveDown(-6rem);
+    animation-name: moveDown;
+    animation-duration: 300ms;
+    animation-timing-function: ease-in;
+    animation-delay: 0s;
+    animation-fill-mode: forwards;
+
+
+    &:hover,
+    &:focus {
+      box-shadow: .25rem .25rem .5rem rgba($color-blacker, .6);
+      border-bottom: 2rem solid $color-white;
+    }
+
+
+    &-text {
+      display: inline-block;
+      color: $color-white;
+      font-size: 2.2rem;
+      font-weight: 800;
+      padding: 0 .5rem;
+      width: 100%;
+      text-align: center;
+      text-decoration: none;
+      transition: all 300ms;
+      vertical-align: -.3rem;
+      height: 6rem;
+
+      &:hover,
+      &:focus {
+        transform: translateY(-2px);
+
+      }
+
+      &:active {
+        transform: translateY(1px);
+      }
+
+    }
+
+  }
+
+
+
+  &__nav {
+    position: absolute;
+    top: 0;
+    right: 0;
+    // width: calc(100% - (6rem + #{$left-margin} + 1rem));
+    height: 6rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    align-items: flex-end;
+
+    &-link {
+      line-height: 1;
+      font-size: 1.8rem;
+      font-weight: bold;
+
+      margin-right: $left-margin;
+      // Remove left/right margins for mobile
+      @include respond(mobile) {
+        margin-right: $gutter-sm;
+      }
+
+      height: 4rem;
+      padding-left: .5rem;
+      padding-right: .5rem;
+      position: relative;
+      transition: all 300ms;
+      background-color: transparent;
+
+      opacity: 0;
+      @include animation__moveDown(-4rem);
+      animation-name: moveDown;
+      animation-duration: 200ms;
+      animation-timing-function: ease-in;
+      animation-delay: 300ms;
+      animation-fill-mode: forwards;
+
+      &:nth-child(2) {
+          animation-delay:(600ms);
+        }
+
+
+      &:hover,
+      &:focus,
+       {
+         background-image: linear-gradient(
+              to top left,
+              rgba(#fff, 1),
+              rgba($color-white, 1));
+
+         border-bottom: 2rem solid $color-primary-dark;
+         box-shadow: .25rem .5rem .5rem rgba($color-primary-dark, .5);
+       }
+
+
+      &-text {
+        color: $color-secondary;
+        text-decoration: none;
+        text-shadow: 1px 1px 1px $color-white;
+        display: inline-block;
+
+        &:hover,
+        &:focus,
+         {
+           transform: translateY(-2px);
+
+         }
+
+         &:active
+          {
+            transform: translateY(1px);
+          }
+
+      }
+
+      // TODO DO YOU WANTN TO REINSTATE THE TOP EDGE OF DROPSHADOW?
+      // &:hover::after,
+      // &:focus::after,
+      //  {
+      //   display: inline-block;
+      //   vertical-align: top;
+      //   line-height: 0;
+      //   position: absolute;
+      //   top:-2.2rem;
+      //   bottom:0;
+      //   right:0;
+      //   left: 0;
+      //   height: 6rem;
+      //   content: '';
+      //   box-shadow: .25rem .5rem .5rem rgba($color-primary-dark, .5);
+      //
+      // }
+      //
+      // &:active::before {
+      //   box-shadow: .25rem .5rem .25rem rgba($color-primary-dark, .3);
+      // }
+
+
+      }
+
+  }
+}

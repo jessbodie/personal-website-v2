@@ -1,0 +1,224 @@
+.list {
+
+  display:flex;
+  flex-direction: column;
+
+
+
+
+  @include respond(tab-port) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    align-content: flex-start;
+    flex-wrap: wrap;
+  }
+
+
+
+
+
+  // CONTAINER OF ALL PROJECT ITEMS
+  &__container {
+
+    padding-top: 5rem;
+    padding-bottom: $left-margin;
+    width: 100%;
+    display: block;
+    cursor: pointer;
+
+    &:nth-child(even) {
+      background-image: linear-gradient( to right bottom,
+        rgba($color-primary, .05),
+        rgba($color-primary, 0.3));
+    }
+
+
+    @include respond(tab-port) {
+      width: 50%;
+      flex: 0 1 auto;
+      height: $proj-header-tab;
+      padding-top: 0;
+      padding-bottom: 0;
+      @include respond(big-desktop) {
+        max-height: calc(#{$desktop-width} / 4);
+      }
+
+      &:nth-child(1),
+      &:nth-child(4n + 1) {
+        // background-color: rgba($color-primary, .3);
+        background-image: linear-gradient( to right bottom,
+          rgba($color-primary, .05),
+          rgba($color-primary, 0.3));
+      }
+
+      &:nth-child(4n),
+      &:nth-child(4n-1) {
+        // background-color: rgba($color-tertiary, .3);
+        background-image: linear-gradient( to right bottom,
+          rgba($color-tertiary, .15),
+          rgba($color-tertiary, 0.45));
+        text-align: right;
+      }
+    }
+
+
+
+
+    // IMAGE FOR EACH PROJECT IN THE LIST
+    &-image {
+      max-width: 100%;
+      height: $proj-header-mobile;
+      overflow: hidden;
+      margin-left: $left-margin;
+      margin-right: $left-margin;
+      margin-bottom: $gutter-sm;
+      display: inline-block;
+      position: relative;
+      @include respond(big-desktop) {
+        max-height: calc(#{$desktop-width} / 4);
+      }
+      @include respond(mobile) {
+        margin-left: $gutter-sm;
+        margin-right: $gutter-sm;
+      }
+
+
+      img {
+        cursor: pointer;
+        position: relative;
+        // IE 11 doesn't support object-fit
+        @supports (object-fit: cover) {
+          object-fit: cover;
+          object-position: 0% 0%;
+          width: 100%;
+        }
+        height: $proj-header-mobile;
+        overflow: hidden;
+
+        &:hover,
+        &:focus {
+          opacity: .7;
+          transform: scale(1.1);
+          transition: transform 300ms;
+          box-shadow: .2rem .5rem 1rem rgba($color-primary, .6);
+        }
+      }
+
+
+      @include respond(tab-port) {
+
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+        margin-bottom: 0;
+        height: $proj-header-tab;
+        @include respond(big-desktop) {
+          max-height: calc(#{$desktop-width} / 4);
+        }
+        width: 50%;
+        overflow: hidden;
+
+        img {
+          height: 35vw;
+          max-width: 300%;
+        }
+      }
+
+    }
+
+    // HEADER THAT COVERS EACH IMAGE IN THE LIST
+    &-header {
+      display: block;
+      height: 0;
+      margin: 0;
+      padding: 0;
+      text-align: left;
+      position: relative;
+      top: 0;
+      left: 0;
+      max-height: inherit;
+
+      &-rotate {
+        height: 4rem;
+        width: $proj-header-mobile;
+        background-color: $color-primary;
+        transform: rotate(-90deg);
+        transform-origin: left top;
+        display: inline-block;
+        position: relative;
+        top: $proj-header-mobile;
+        z-index: map-get($zindex, text-over);
+        text-align: right;
+        @include dropshadow-vertical;
+
+        h2 {
+          position: absolute;
+          top: 0;
+          right: 0;
+
+        }
+
+        @include respond(tab-port) {
+          width: $proj-header-tab;
+          top: $proj-header-tab;
+        }
+      }
+    }
+
+
+    // TEXT FOR EACH PROJECT IN THE LIST
+    // MOBILE DISPLAY
+    &-text {
+      margin-left: $left-margin;
+      margin-right: $left-margin;
+      font-size: 1rem;
+
+      @include fancy-bullets;
+
+      // li::before {
+      //   content: '\25A0';
+      //   color: $color-primary;
+      //   display: inline-block;
+      //   margin-right: 1rem;
+      //   margin-left: -2rem;
+      // }
+
+
+      @include respond (tab-port) {
+        display: none;
+      }
+    }
+
+  }
+
+
+//////////////////////////////////////////////
+// TOGGLE TO SHOW EXPANDED DESCRIPTIVE TEXT //
+//////////////////////////////////////////////
+
+  input {
+    display: none;
+    visibility: hidden;
+  }
+
+  label {
+    display: block;
+  }
+
+  @for $i from 0 to 12 {
+    #toggle#{$i}:checked ~ #expand {
+      height: auto;
+      transform: scaleY(1);
+      transition: transform 0.3s ease-out;
+    }
+  }
+
+  #expand {
+    overflow: hidden;
+    transform: scaleY(0);
+    transform-origin: top;
+    height: 0px;
+  }
+
+}

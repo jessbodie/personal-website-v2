@@ -1,0 +1,45 @@
+.section-hero-text-only {
+  @include section-block;
+  background-color: $color-primary;
+  @include dropshadow;
+  background-image: linear-gradient(
+       to right bottom,
+       rgba($color-primary, 0.8),
+       rgba($color-primary-dark, .95));
+  max-width: 100%;
+  z-index: map-get($zindex, text-over);
+  height: 14rem;
+  max-height: 20vmin;
+  min-height: 10rem;
+
+  @include respond(tab-port) {
+    max-height: 25vmin;
+  }
+}
+
+
+.section-featured {
+  display: none;
+
+  @include respond(tab-port) {
+
+    @include section-block;
+    // height: 0;
+    background-color: $color-white-true;
+    color: $color-black;
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+}
+
+.section-projects {
+  @include section-block;
+  background-color: rgba($color-primary, .3);
+  color: $color-black;
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+
+  max-width: 100%;
+}

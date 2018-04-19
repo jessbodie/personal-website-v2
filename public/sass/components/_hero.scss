@@ -1,0 +1,75 @@
+.hero {
+
+  width: 100%;
+  display: inline-block;
+  position: relative;
+  height: 100%;
+ 
+
+  &__image {
+    // Moved image details to Section div to accommodate extra large displays
+
+    // TODO PASS TO USE VAR
+    max-width: 100%;
+    position: relative;
+  }
+
+  &__text {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    vertical-align: bottom;
+    text-align: right;
+    background-color: transparent;
+    text-shadow: 0 .5rem .5rem rgba($color-primary, .6);
+    transform-origin: left top;
+
+    &-1st {
+      vertical-align: bottom;
+      display: inline-block;
+      line-height: .8;
+      opacity: 0;
+      animation-name: moveInTopLeft;
+      animation-duration: 1s;
+      animation-timing-function: ease-in;
+      animation-delay: 600ms;
+      animation-fill-mode: forwards;
+    }
+
+    &-2nd {
+      display: block;
+      opacity: 0;
+      line-height: .8;
+      animation-name: moveInRight;
+      animation-duration: 1.25s;
+      animation-timing-function: ease;
+      animation-delay: 1.25s;
+      animation-fill-mode: forwards;
+    }
+
+    &-1sthome {
+      vertical-align: bottom;
+      display: inline-block;
+      line-height: .8;
+      opacity: 0;
+      animation-name: moveInTopLeftHome;
+      animation-duration: 5s;
+      animation-timing-function: ease-in;
+      animation-delay: 600ms;
+      animation-fill-mode: forwards;
+
+    }
+
+    &-2ndhome {
+      display: block;
+      opacity: 0;
+      line-height: .8;
+      animation-name: moveInRightHome;
+      animation-duration: 5s;
+      animation-timing-function: ease-in;
+      animation-delay: 1.5s;
+      animation-fill-mode: forwards;
+    }
+
+  }
+}

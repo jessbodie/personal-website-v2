@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+     <!-- Fonts -->
+     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+     <!-- AOS LIBRARY -->
+     <!-- Credit to https://github.com/michalsnik/aos -->
+     <link rel="stylesheet" href="vendor/aos/aos.css" />
+
+     <link rel="stylesheet" type="text/css" href="css/style.comp.css">
+
+     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+     <meta name="description" content="The greatest CV website on Earth, courtesy Jess Bodie Richards">
+     <meta name="robots" content="index, follow">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+     <noscript>Please enable JavaScript!</noscript>
+
+     {{> favicon}}
+
+     <title>Jess Bodie Richards - {{pageTitle}}</title>
+
+</head>
+<body>
+
+<div class="cont">
+
+{{> header}}
+
+
+  <main>
+
+    <section class="section-hero-text-only" data-aos="fade-down" data-aos-delay="200">
+
+      <div class="row ">
+        <div class="hero" id="hero">
+          <div class="hero__image"></div>
+          <div class="hero__text">
+            <h1 class="heading-primary">
+              <span class="hero__text-1st">{{lowerCase pageTitle}}</span>
+            </h1>  
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="section-featured u-hidden" id="section-featured">
+       <div class="row">
+         <div class="list__featured">
+           <div class="list__featured-container" id="feature-container">
+               <div class="list__featured-prev" id="list__featured-prev">&#60;</div>
+               <div class="list__featured-image" tabindex="0">
+               </div>
+               <div class="list__featured-text">
+               </div>
+               <div class="list__featured-next" id="list__featured-next">&#62;</div>
+               <div class="list__featured-close" id="list__featured-close">
+                 <div class="list__featured-close-shape"></div>
+               </div>
+           </div>
+         </div>
+       </div>
+     </section>
+
+   <section class="section-projects">
+      <div class="row u-margin-bottom-med">
+        <div class="list" id="list">
+          <!-- Insert projects from JSON here -->
+
+
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+{{> footer}}
+ 
+</div>
+ 
+<!-- AOS LIBRARY -->
+<!-- Credit to https://github.com/michalsnik/aos -->
+<script src="vendor/aos/aos.js"></script>
+<script src="vendor/aos/aos-init.js"></script>
+
+<script src="js/projects_featured.js"></script>
+
+</body>
+</html>

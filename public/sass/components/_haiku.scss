@@ -1,0 +1,92 @@
+.haiku {
+
+  @include basic-flex;
+
+
+  &__header {
+    flex: 0 1 4rem;
+    width: 4rem;
+    height: 10rem;
+    display: inline-block;
+    position: relative;
+
+    opacity: 0;
+    @include animation__moveDown(-6rem);
+    animation-name: moveDown;
+    animation-duration: 500ms;
+    animation-timing-function: ease-in;
+    animation-delay: 1.5s;
+    animation-fill-mode: forwards;
+
+    &-rotate {
+      width: 4rem;
+      display: inline-block;
+      position: absolute;
+      top: 9rem;
+      transform: rotate(-90deg);
+      transform-origin: left top;
+
+      @include respond(tab-port) {
+
+      }
+    }
+
+    &-top {
+      top: $h2-top-haiku;
+      @include dropshadow-vertical;
+
+      // opacity: 0;
+      // animation-name: fadeIn;
+      // animation-duration: 1s;
+      // animation-timing-function: ease-in;
+      // animation-delay: 2.5s;
+      // animation-fill-mode: forwards;
+
+
+    }
+  }
+
+
+  &__text {
+
+    @include flex-item-right;
+
+
+    &-single {
+      align-items: space-between;
+      color: $color-primary-dark;
+      font-size: 2.2rem;
+      font-weight: 400;
+      word-spacing: 1.05rem;
+      margin-bottom: 1.5rem;
+      line-height: 2.8rem;
+      position: relative;
+      top: 0;
+      vertical-align: top;
+
+      // Replaced with AOS Library
+      // @include animation-fadeIn;
+
+      @for $i from 1 through 3 {
+        &:nth-child(#{$i}) {
+            animation-delay:(#{1s + ($i * 2s)});
+          }
+        }
+
+
+      @include respond(tab-port) {
+
+        @for $i from 1 through 3 {
+          &:nth-child(#{$i}) {
+              margin-left: (#{($i * $left-margin)});
+            }
+          }
+        }
+
+        @include respond(tab-land) {
+          font-size: 2.8rem;
+          margin-bottom: 2rem;
+        }
+    }
+  }
+}

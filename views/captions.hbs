@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+     <!-- Fonts -->
+     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+     <link rel="stylesheet" type="text/css" href="css/style.min.css">
+
+     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+     <meta name="description" content="The greatest CV website on Earth, courtesy Jess Bodie Richards">
+     <meta name="robots" content="index, follow">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+     <noscript>Please enable JavaScript!</noscript>
+
+     {{> favicon}}
+
+     <title>Jess Bodie Richards - {{pageTitle}}</title>
+
+</head>
+<body>
+
+  <div class="container">
+
+  {{> header}}
+
+
+
+  <main>
+
+    <section class="section-hero-text-only">
+      <!-- Purposefully removed row -->
+      <!-- <div class="row"> -->
+        <div class="hero">
+          <div class="hero__image"></div>
+          <div class="hero__text">
+            <h1 class="heading-primary">
+              <span class="hero__text-1st">{{lowerCase pageTitle}}</span>
+          </div>
+        </div>
+      <!-- </div> -->
+    </section>
+
+
+
+
+  <section class="section-latest">
+      <div class="row">
+        <div class="latest">
+
+
+         <div class="latest__first">
+          <div class="latest__titles">
+            <h3 class="heading-tertiary">Caption Generator</h3>
+            <p class="latest__text">a.k.a. Gratuitous JavaScript</p>
+          </div>
+          <div class="latest__pics">
+
+            <figure>
+              <div class="latest__image">
+                 <img src="img/bucket_head.jpg" alt="Toddler with bucket on his head">
+              </div>
+
+            <!-- Begin caption generator -->
+              <div class="captions">
+                <figcaption class="captions__container">
+                <form>
+                     <textarea id="change-caption" name="captions__form" class="captions__form">%Insert YOUR caption here.%</textarea>
+                     <!-- This is Rehash button inserted by JS -->
+                     <!-- <button class="captions__rehash" id="rehash" type="button">Rehash</button> -->
+                </form>
+                </figcaption>
+              </div>
+              </figure>
+
+
+          </div> 
+          </div>
+
+
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+{{> footer}}
+
+</div>
+
+
+<script src="js/captions.js"></script>
+
+</body>
+</html>

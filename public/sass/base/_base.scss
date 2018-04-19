@@ -1,0 +1,144 @@
+*,
+*::after, /* best practice */
+*::before {
+     margin: 0;
+     padding: 0;
+     box-sizing: inherit; /* best practice */
+    //  border: 1px solid green;
+}
+
+
+html {
+  box-sizing: border-box; /* best practice */
+  font-size: calc(6.5px + .66vw);
+  width: 100%;
+}
+
+body {
+     font-family: 'Montserrat', sans-serif;
+     overflow-x: hidden;
+     -webkit-text-size-adjust: 100%; // for iOS font resizing
+     width: 100%;
+}
+
+main {
+  width: 100%;
+  display: block;
+  position: relative;
+  align-self: stretch;
+  justify-self: stretch;
+
+  a {
+    display: inline;
+    transition: transform 300ms, text-shadow 300ms;
+
+    &:link,
+    &:visited {
+      text-decoration: none;
+      color: $color-primary;
+    }
+
+    &:hover,
+    &:focus {
+      transform: translateY(-2px);
+      text-shadow: 0px 1px 4px rgba($color-primary-dark, .3);
+
+    }
+
+    &:active {
+      transform: translateY(1px);
+    }
+
+  }
+
+}
+
+ul, p {
+  font-size: $body-default;
+  margin-top: .8rem;
+  }
+
+
+li {
+  list-style:none;
+  margin-left: $left-margin;
+  margin-top: .6rem;
+}
+
+
+
+::selection {
+  background-color: $color-primary;
+  color: $color-white;
+}
+
+.heading-primary {
+  display: inline-block;
+  font-size: 4.5rem;
+  line-height: 5.6rem;
+  font-weight: 800;
+  color: $color-white;
+  vertical-align: bottom;
+
+
+  @include respond(tab-port) {
+    font-size: 5rem;
+    line-height: 6.5rem;
+  }
+
+  @include respond(tab-land) {
+    font-size: 8rem;
+    line-height: 7rem;
+  }
+}
+
+
+.heading-secondary {
+  display: inline-block;
+  font-size: 2rem;
+  font-weight: 700;
+  color: $color-white;
+  background-color: $color-primary;
+  padding: .5rem 1.5rem 1rem 1.5rem;
+  // @include dropshadow-vertical;
+  z-index: map-get($zindex, text-over);
+  }
+
+
+.heading-tertiary {
+  display: inline-block;
+  position: relative;
+  font-size: $h3-default;
+  font-weight: 800;
+  color: $color-primary;
+  background-color: transparent;
+  padding: .5rem 0 .5rem 0;
+  // margin-top: 3rem;
+  z-index: map-get($zindex, text-over);
+
+
+}
+
+
+button {
+  background-color: $color-secondary;
+  font-family: inherit;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: $color-white;
+  padding: .5rem 1rem .75rem 1rem;
+  border: none;
+  outline: none;
+
+  &:hover,
+  &:focus,
+  &:active {
+    @include dropshadow;
+    cursor: pointer;
+  }
+}
+
+
+img {
+  max-width: 100%;
+}

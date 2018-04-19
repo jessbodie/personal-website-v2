@@ -1,0 +1,222 @@
+/////////////////////////////////
+// PROJECTS - TOP FEATURE AREA - 600PX +  //
+/////////////////////////////////
+
+.list__featured {
+  position: relative;
+  margin: $gutter-sm 0 0 0;
+
+  &-next,
+  &-prev {
+    @include respond(tab-port) {
+        flex: 0 0 auto;
+        color: rgba($color-secondary-light, .5);
+        font-size: 6rem;
+        line-height: .6;
+        font-weight: 500;
+        display: inline-block;
+        padding: 0 .5rem;
+        cursor: pointer;
+        transform: scaleX(.5);
+        margin: 0;
+
+
+        &:hover,
+        &:focus {
+          color: $color-white;
+          background-color: $color-secondary-light;
+          border-radius: 1px;
+          transform: scaleX(.5) translateY(-5px);
+          transition: transform 300ms, background-color 300ms;
+          @include dropshadow;
+        }
+
+        &:active {
+          background-color: $color-primary;
+        }
+
+      }
+    }
+
+
+    &-prev {
+      @include respond(tab-port) {
+        // position: absolute;
+        // top: 40%;
+        // left: 0;
+      }
+    }
+
+    &-next {
+      @include respond(tab-port) {
+        // position: absolute;
+        // top: 40%;
+        // right: 0;
+      }
+    }
+
+  &-container {
+
+    @include respond(tab-port) {
+      margin-top: 1rem;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      align-items: center;
+      align-content: center;
+      height: $proj-featured-y;
+      max-height: 70vh;
+      max-width: 90rem;
+      margin: 0;
+      }
+
+    }
+
+
+    // CLOSE ICON
+    &-close {
+        @include respond(tab-port) {
+          display: inline-block;
+          position: absolute;
+          top: 0;
+          right: 1rem;
+          width: 3rem;
+          height: 3rem;
+          cursor: pointer;
+
+          &-shape,
+          &::after {
+            position: absolute;
+            top: 1.4rem;
+            right: 0;
+            width: 3rem;
+            height: 3px;
+            background-color: rgba($color-secondary-light, .5);
+            display: inline-block;
+            transform: rotate(135deg);
+            transition: all .6s;
+          }
+
+        &::after {
+          transform: rotate(45deg);
+          content:"";
+          position: absolute;
+          left: 0;
+        }
+
+    &:hover,
+    &:focus {
+      background-color: $color-secondary-light;
+      border-radius: 1px;
+      @include dropshadow;
+      transform: translateY(-5px);
+      transition: transform 300ms, background-color 300ms;
+
+      & > div {
+        background-color: $color-white;
+        // transform: rotate(-45deg);
+      }
+
+      &::after {
+        background-color: $color-white;
+        // transform: rotate(-135deg);
+        }
+      }
+    }
+  }
+
+
+  // FEATURED IMAGE
+  &-image {
+
+    @include respond(tab-port) {
+      @include animation-fadeIn;
+      flex: 3 0 auto;
+      margin-left: $gutter-sm;
+      margin-right: $gutter-sm;
+      max-height: $proj-featured-y;
+      max-width: 40vw;
+    }
+
+    @include respond(tab-land) {
+      // height: $proj-featured-y;
+      // margin-left: $left-margin;
+      // margin-right: $left-margin;
+      flex: 3 0 auto;
+    }
+
+    @include respond(desktop) {
+      flex: 3 0 auto;
+    }
+
+
+
+    img {
+      @include animation-fadeIn;
+
+      @include respond(tab-port) {
+        max-height: $proj-featured-y;
+        object-fit: cover;
+        object-position: top left;
+        max-width: 100%;
+      }
+
+      @include respond(tab-land) {
+        object-fit: contain;
+      }
+    }
+  }
+
+
+  // FEATURED TEXT
+  &-text {
+
+    @include respond(tab-port) {
+
+      flex: 1 1 auto;
+      margin-right: $gutter-sm;
+      overflow-y: auto;
+      max-height: 100%;
+      align-self: center;
+
+
+      ul, li, p, {
+        font-size: 1rem;
+        list-style: none;
+        @include animation-fadeIn;
+      }
+
+      li {
+        text-indent: -1rem;
+   
+        @include animation-fadeIn;
+      }
+
+
+      @include fancy-bullets;
+
+      h3 {
+        font-size: 1.2rem;
+        @include animation-fadeIn;
+      }
+    }
+
+    @include respond(tab-land) {
+      flex: 1 1 auto;
+      // margin-right: $left-margin;
+
+      // ul, li, p, {
+      //   font-size: $body-default;
+      // }
+
+      // h3 {
+      //   font-size: $h3-default;
+      // }
+    }
+
+    @include respond(desktop) {
+      flex: 0 1 auto;
+    }
+  }
+}

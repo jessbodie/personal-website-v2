@@ -1,0 +1,90 @@
+.purpose {
+  padding-bottom: 0;
+  position: relative;
+  display: block;
+  width: 100%;
+  max-height: 50vh;
+  height: $sec-height-xs;
+  background-color: inherit;
+
+  @include respond (tab-land) {
+    height: $sec-height-sm;
+  }
+
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    line-height: 0;
+    float: left;
+    @include overlay ($color-white);
+    // display: none; // DEBUG
+    display: block;
+    overflow: hidden;
+
+
+    // Show cool shape when Clip Path and Shape Outside supported
+    @supports ((clip-path: polygon(55% 0, 66% 50%, 55% 100%, 0% 100%, 0 0))
+              and (shape-outside: polygon(55% 0, 66% 50%, 55% 100%, 0% 100%, 0 0))) {
+      clip-path: polygon(55% 0, 66% 50%, 55% 100%, 0% 100%, 0 0);
+      shape-outside: polygon(55% 0, 66% 50%, 55% 100%, 0% 100%, 0 0);
+      display: block;
+      margin-right: -2rem;
+      margin-left: -15rem;
+      }
+
+    @include respond(tab-port) {
+      @supports ((clip-path: polygon(55% 0, 66% 50%, 55% 100%, 0% 100%, 0 0))
+                and (shape-outside: polygon(55% 0, 66% 50%, 55% 100%, 0% 100%, 0 0))) {
+        margin-left: -10rem;
+        }
+      }
+
+    @include respond(tab-land) {
+
+      // Needed to show when Clip Path and Shape Outside supported
+      @supports ((clip-path: polygon(55% 0, 66% 50%, 55% 100%, 0% 100%, 0 0))
+                and (shape-outside: polygon(55% 0, 66% 50%, 55% 100%, 0% 100%, 0 0))) {
+          margin-left: 0;
+          margin-right: $left-margin; // NEW
+        }
+    }
+  }
+
+  &__text {
+    padding: 1rem 2rem 2rem 2rem;
+    z-index: map-get($zindex, screens);
+    color: $color-black;
+    display: block;
+    margin-bottom: 0;
+    position: absolute;
+    bottom: 0; // NEW
+    margin-left: $left-margin; // NEW
+    background: linear-gradient(
+         -60deg,
+         rgba($color-secondary, .7) 0%,
+         rgba($color-white, .6) 15%,
+         rgba($color-white, .7) 55%,
+         rgba($color-secondary, .8) 100%);
+
+    // Show rectangle overlay when Clip Path and Shape Outside supported
+    @supports ((clip-path: polygon(55% 0, 66% 50%, 55% 100%, 0% 100%, 0 0))
+              and (shape-outside: polygon(55% 0, 66% 50%, 55% 100%, 0% 100%, 0 0))) {
+        text-shadow: none;
+        background: transparent;
+        position: relative;
+      }
+
+
+    p {
+      font-size: 2.2rem;
+      line-height: 155%;
+
+      @include respond(tab-port) {
+        font-size: 1.8rem;
+        line-height: 160%;
+        }
+      }
+    }
+}

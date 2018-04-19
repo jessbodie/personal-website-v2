@@ -1,0 +1,148 @@
+.obligatory {
+  display: block;
+  margin-left: $left-margin;
+  margin-right: $left-margin;
+
+  & .captions {
+    display: none;
+
+    @include respond (tab-land) {
+      display: block;
+    }
+  }
+
+
+  @include respond (tab-land) {
+    @include basic-flex;
+  }
+
+  &__image {
+    display: inline-block;
+    line-height: 0;
+    height: 100%;
+    max-width: 8rem;
+    float: left;
+    margin-right: $left-margin;
+
+
+    @include respond (tab-land) {
+      margin-right: 0;
+      max-width: 20rem;
+      }
+
+    &-only {
+      @include dropshadow;
+      width: 100%;
+      margin-bottom: 2rem;
+
+      @include respond (tab-land) {
+        margin-bottom: 0;
+        }
+  
+    }
+
+    &-crazy {
+      filter: blur(1px) hue-rotate(90deg) saturate(150%);
+      transition: all 500ms;
+
+      &:hover,
+      &:active {
+        filter: blur(2px) hue-rotate(90deg) saturate(80%) invert(190%) contrast(80%);
+      }
+    }
+
+    figcaption {
+      @include respond (tab-land) {
+        max-width: 20rem;
+        padding: 0;
+      }
+    }
+
+    textarea {
+      padding: 0;
+      height: 3.5rem;
+    }
+
+    form {
+      width: 100%;
+    }
+
+    button {
+      @include respond (tab-land) {
+        font-size: 1rem;
+        padding: .3rem;
+        position: relative;
+        margin: 0 auto;
+        display: block;
+      }  
+    }
+
+  }
+
+
+  &__text {
+
+    @include respond (tab-land) {
+      @include flex-item-right;
+    }
+
+    &-wrapper {
+
+      // REPLACED WITH AOS
+      // @include animation-fadeInRight;
+        @for $i from 1 through 4 {
+          &:nth-child(#{$i}) {
+      //       animation-delay:(#{($i * 1s)});
+            @include respond (tab-land) {
+              margin-left: (#{($i * $left-margin) - $left-margin});
+
+            }
+          }
+        }
+
+    }
+
+
+
+
+    &-single {
+      // border: 1px solid gray;
+
+      color: $color-primary-dark;
+      font-size: $body-default;
+      line-height: normal;
+      word-spacing: .35rem;
+      margin-bottom: 2.5rem;
+      position: relative;
+      top: 0;
+      vertical-align: top;
+
+
+
+      @include respond (mobile) {
+          &:nth-child(4) {
+            @include clearfix;
+            }
+        }
+
+      @include respond (tab-port) {
+          &:nth-child(6) {
+            @include clearfix;
+            }
+        }
+
+      @include respond (tab-land) {
+        align-items: space-between;
+
+      }
+
+
+
+
+      }
+
+
+
+
+  }
+}

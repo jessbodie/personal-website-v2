@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+     <!-- Fonts -->
+     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+     <!-- AOS LIBRARY -->
+     <!-- Credit to https://github.com/michalsnik/aos -->
+     <link rel="stylesheet" href="vendor/aos/aos.css" />
+
+     <link rel="stylesheet" type="text/css" href="css/style.min.css">
+
+     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+     <meta name="description" content="The greatest CV website on Earth, courtesy Jess Bodie Richards">
+     <meta name="robots" content="index, follow">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+
+     <noscript>Please enable JavaScript!</noscript>
+
+     {{> favicon}}
+
+     <title>Jess Bodie Richards - Web Developer</title>
+
+</head>
+<body>
+
+<div class="cont">
+
+{{> header}}
+
+  <main>
+
+    <section class="section-hero" data-aos="fade-down" data-aos-delay="500" data-aos-once="true">
+
+      <div class="row u-margin-bottom-med u-height-100">
+        <div class="hero">
+          <div class="hero__image"></div>
+          <div class="hero__text">
+            <h1 class="heading-primary">
+              <span class="hero__text-1sthome" id="showName">Who am I?</span><br />
+              <span class="hero__text-2ndhome" id="showTitle">Why am I here?</span></h1>
+          </div>
+        </div>
+      </div>
+    </section>
+
+ <section class="section-haiku">
+      <div class="row u-margin-top-med">
+        <div class="haiku">
+          <div class="haiku__header">
+            <div class="haiku__header-rotate">
+              <h2 class="heading-secondary haiku__header-top">haiku</h2>
+            </div>
+          </div>
+          <div class="haiku__text">
+            <p class="haiku__text-single" data-aos="fade-left" data-aos-once="true">Time, money, the &ldquo;what&rdquo;...</p>
+            <p class="haiku__text-single" data-aos="fade-left" data-aos-delay="500" data-aos-once="true">Became hohum... Reinvent!</p>
+            <p class="haiku__text-single" data-aos="fade-left" data-aos-delay="1000" data-aos-once="true">Create. Code. Improve. :-)</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+ <section class="section-purpose">
+      <div class="row">
+        <div class="purpose">
+          <figure class="purpose__image">&nbsp;
+            <img src="img/tree-dark_tree-light.jpg"
+            alt="Tree in shadow with plastic bag, tree in light">
+          </figure>
+          <div class="purpose__text" data-aos="fade-left" data-aos-delay="200" data-aos-once="true">
+            <p>After years of digital product and project management experience,
+            I am branching out&mdash;to hands-on web development.</p>
+          </div>
+        </div>
+      </div>
+  </section>
+
+
+  <section class="section-latest">
+      <div class="row u-margin-top-med">
+        <div class="latest">
+
+             <div class="latest__header">
+                <div class="latest__header-rotate">
+                  <h2 class="heading-secondary u-nowrap">The Latest</h2>
+                </div>
+            </div>
+
+
+            <div class="latest__first" data-aos="fade-up"  data-aos-delay="400" data-aos-once="true">
+              <div class="latest__titles">
+                <h3 class="heading-tertiary u-margin-header-wrap">
+                    <a href="http://lucky.jessbodie.com" target="_new">Lucky Cat - Game</a>
+                  </h3>
+                  <p class="latest__text  u-margin-header-wrap">JavaScript, SASS, HTML</p>
+              </div>
+              <figure>
+                  <a href="http://lucky.jessbodie.com" target="_new">
+                    <div class="latest__image">
+                     <img src="img/projects/proj_lucky_cat-sm.png" alt="Screenshot from Lucky Cat Game" />
+                    </div>
+                  </a>
+                  <figcaption>
+                    <p class="latest__text">Lucky Cat likes to play. Catch Lucky Cat and grow your pot of gold. <p>
+                  </figcaption>
+              </figure>
+            </div>
+
+
+
+
+            <div class="latest__second"  data-aos="fade-up" data-aos-delay="200" data-aos-once="true">
+              <div class="latest__titles">
+                <h3 class="heading-tertiary">
+                    <a href="../retirement-calculator" target="_new">Retirement Calculator</a>
+                </h3>
+                <p class="latest__text">JavaScript, CSS, HTML</p>
+              </div>
+
+              <figure>
+                  <a href="../retirement-calculator" target="_new">
+                    <div class="latest__image">
+                      <img src="img/projects/proj_calc.png" alt="Practical Retirement Calculator screenshot" />
+                    </div></a>
+                    <figcaption>
+                      <p class="latest__text">This practical tool calculates the approximate annual retirement savings necessary for an individual to retire based on five inputs.<p>
+                    </figcaption>
+              </figure>
+
+            </div>
+
+        </div>
+      </div>
+
+
+    </section>
+  </main>
+
+
+{{> footer}}
+
+</div>
+
+<!-- AOS LIBRARY -->
+<!-- Credit to https://github.com/michalsnik/aos -->
+<script src="vendor/aos/aos.js"></script>
+<script src="vendor/aos/aos-init.js"></script>
+
+<script src="js/tellmeyourname.js"></script>
+
+</body>
+</html>

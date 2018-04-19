@@ -1,0 +1,23 @@
+{
+  "name": "new",
+  "version": "1.0.0",
+  "description": "Jess Bodie Richards' Personal Website v2.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jessbodie/new.git"
+  },
+  "author": "Jess Bodie Richards",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jessbodie/new/issues"
+  },
+  "homepage": "https://github.com/jessbodie/new#readme",
+  "dependencies": {
+    "express": "^4.16.3",
+    "hbs": "^4.0.1"
+  }
+}

@@ -1,0 +1,72 @@
+.section-hero {
+  @include section-block;
+  height: 42rem;
+  max-height: 80vmin;
+  background-color: $color-primary;
+  @include dropshadow;
+
+  background-image: linear-gradient(
+       to right bottom,
+       rgba($color-primary, 0.8),
+       rgba($color-primary-dark, .95)),
+       url('img/tree_bag_bg-600.jpg');
+
+  background-size: cover;
+  background-position: left 90%;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  max-width: 100%;
+  z-index: map-get($zindex, text-over);
+
+  // @include respond(tab-port) {
+  //   height: 42rem;
+  // }
+}
+
+
+.section-haiku {
+  @include section-block;
+  max-height: 80vh;
+  background-color: $color-white-true;
+  color: $color-black;
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+}
+
+.section-purpose {
+  @include section-block;
+  // Show background image when Clip Path and Shape Outside not supported
+  @supports not ((clip-path: polygon(55% 0, 66% 50%, 55% 100%, 0% 100%, 0 0))
+            and (shape-outside: polygon(55% 0, 66% 50%, 55% 100%, 0% 100%, 0 0))) {
+    background: linear-gradient(
+         -60deg,
+         rgba($color-secondary, .6) 0%,
+         rgba($color-secondary, .0) 15%,
+         rgba($color-secondary, .0) 55%,
+         rgba($color-secondary, .7) 100%),
+         url('../img/tree-dark_tree-light.jpg');
+    background-size: cover;
+    background-position: top left;
+    background-repeat: no-repeat;
+    max-width: 100%;
+    }
+
+    background: linear-gradient(
+         -60deg,
+         rgba($color-secondary, .6) 0%,
+         rgba($color-secondary, .0) 15%,
+         rgba($color-secondary, .0) 55%,
+         rgba($color-secondary, .7) 100%);
+
+  @include dropshadow;
+  @include clearfix;
+}
+
+.section-latest {
+  @include section-block;
+  max-height: 100%;
+  background-color: rgba($color-primary, .4);
+  @include dropshadow;
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+}
