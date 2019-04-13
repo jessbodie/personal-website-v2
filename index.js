@@ -1,8 +1,7 @@
 const express = require('express');
 const hbs = require('hbs');
 
-// Necessary for running on Heroku TODO
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3000; // For running on Heroku
 const app = express();
 
 // Configure for templatizing
